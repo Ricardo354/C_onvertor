@@ -51,7 +51,7 @@ void decimal_to_binary(long number){
 
     int mask = 0b00000001;
     int binary = 0;
-    long double binarySize = log2((long double) number);
+    long binarySize = log2(number);
     for (int i = binarySize; i >= 0 ;i--){
         int temp = number >> i;
         if (temp & mask){
