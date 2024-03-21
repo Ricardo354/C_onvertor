@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <math.h>
 
 void decimal_to_binary(long number);
 int binary_to_decimal(char* binary);
@@ -50,8 +51,8 @@ void decimal_to_binary(long number){
 
     int mask = 0b00000001;
     int binary = 0;
-    
-    for (int i = sizeof(number); i >= 0 ;i--){
+    long double binarySize = log((long double) number) / log((long double) 2);
+    for (int i = binarySize; i >= 0 ;i--){
         int temp = number >> i;
         if (temp & mask){
             printf("1");
